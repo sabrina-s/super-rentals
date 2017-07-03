@@ -1,0 +1,16 @@
+<div class="jumbo">
+  <div class="text-center">
+    <h2>Users</h2>
+    <p>Search through GitHub's user database!</p>
+  </div>
+</div>
+
+{{#user-filter
+  filter=(action 'filterByName')
+  as |users|}}
+  <div class="container" style="width:100%">
+    {{#each users as |userUnit|}}
+    {{user-listing user=userUnit}}
+    {{/each}}
+  </div>
+  {{/user-filter}}
